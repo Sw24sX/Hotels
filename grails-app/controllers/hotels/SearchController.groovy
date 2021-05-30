@@ -3,7 +3,7 @@ package hotels
 class SearchController {
 
     def index() {
-        def query = params.query as String
+        def query = (params.query as String).toLowerCase()
         def countryName = params.country as String
 
         def result = filter(Hotel.findAll(), query, countryName)
@@ -18,7 +18,7 @@ class SearchController {
     }
 
     private static List<Hotel> filter(List<Hotel> input, String query, String country) {
-        return input.findAll {it.name.indexOf(query) != -1 && it.country.name == country}
+        return input.findAll {it.name.toLowerCase().indexOf(query) != -1 && it.country.name == country}
     }
 
     private static List<Hotel> sort(List<Hotel> input) {

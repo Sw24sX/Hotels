@@ -38,26 +38,5 @@
             </form>
         </td>
     </table>
-
-    <table>
-        <thead>
-            <tr>
-                <th>Rating</th>
-                <th>Name</th>
-                <th>Country</th>
-                <th>Site</th>
-            </tr>
-        </thead>
-        <tbody>
-        <g:each in="${list}" var="entry">
-            <tr>
-                <td>${entry.rating}</td>
-                <td>${entry.name}</td>
-                <td>${entry.country}</td>
-                <td>${entry.site}</td>
-            </tr>
-        </g:each>
-        </tbody>
-    </table>
 </body>
 </html>

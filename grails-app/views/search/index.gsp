@@ -28,9 +28,9 @@
     <table>
         <thead>
         <tr>
-            <th>Rating</th>
-            <th>Name</th>
-            <th>Site</th>
+            <th>Звездность</th>
+            <th>Название</th>
+            <th>Сайт</th>
         </tr>
         </thead>
         <tbody>
@@ -38,7 +38,13 @@
             <tr>
                 <td>${entry.rating}</td>
                 <td>${entry.name}</td>
-                <td>${entry.site}</td>
+                <td>
+                    <g:if test="${entry.site != null}">
+                        <p>
+                            <a href=${entry.site}>Перейти на сайт</a>
+                        </p>
+                    </g:if>
+                </td>
             </tr>
         </g:each>
         </tbody>

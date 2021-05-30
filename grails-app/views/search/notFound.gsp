@@ -13,7 +13,7 @@
 </head>
 
 <body>
-    <h1 style="position:absolute; width:100%; text-align:center">Not found</h1>
+    <h1 style="position:absolute; width:100%; text-align:center">По вашему запросу ничего не найдено</h1>
 
     <form action="/search/toHome" method="get" style="margin: 0 auto; width: 320px; position:absolute; text-align:left">
         <input type="submit" name="Home" value="Home" id="Home">

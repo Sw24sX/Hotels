@@ -7,15 +7,13 @@ class Hotel {
     Integer rating
     String site
     Country country
-//    static belongsTo = [coutry: Country]
 
     static constraints = {
-        //todo
-//        name(unique: [name, country.getName()])
-//        coutry
-//        name
+        name(unique: ['name', 'country'])
         rating min: 0, max: 5
-        site nullable: true
+        site nullable: true, validator: {val ->
+            val == null || val.startsWith("http://") || val.startsWith("https://")
+        }
     }
 
     String toString() {

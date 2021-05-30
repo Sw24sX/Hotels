@@ -8,10 +8,15 @@
 <%@ page contentType="text/html;charset=UTF-8" %>
 <html>
 <head>
-    <title></title>
+    <meta name="layout" content="main"/>
+    <title>Not Found Page</title>
 </head>
 
 <body>
-    <h1>Not found</h1>
+    <h1 style="position:absolute; width:100%; text-align:center">Not found</h1>
+
+    <form action="/search/toHome" method="get" style="margin: 0 auto; width: 320px; position:absolute; text-align:left">
+        <input type="submit" name="Home" value="Home" id="Home">
+    </form>
 </body>
 </html>

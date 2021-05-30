@@ -13,22 +13,34 @@
 </head>
 
 <body>
+    <table style="margin: 0; padding: 0">
+        <td>
+            <form action="/search/toHome" method="get" style="margin: 5px 10px; width: auto; align:left">
+                <input type="submit" name="Home" value="Новый поиск" id="Home">
+            </form>
+        </td>
+
+        <td>
+            <p style="margin: 5px 10px; text-align: left">Найдено: ${countResult}</p>
+        </td>
+    </table>
+
     <table>
         <thead>
         <tr>
-            <th>Name</th>
-            <th>Site</th>
             <th>Rating</th>
+            <th>Name</th>
             <th>Country</th>
+            <th>Site</th>
         </tr>
         </thead>
         <tbody>
         <g:each in="${list}" var="entry">
             <tr>
-                <td>${entry.name}</td>
-                <td>${entry.site}</td>
                 <td>${entry.rating}</td>
+                <td>${entry.name}</td>
                 <td>${entry.country}</td>
+                <td>${entry.site}</td>
             </tr>
         </g:each>
         </tbody>

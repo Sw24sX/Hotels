@@ -4,13 +4,14 @@ class SearchController {
 
     def index() {
         def query = (params.query as String)
-//        def a = {it.name.indexOf(query) != -1}
         def hotels = Hotel.findAll()
         def result = filter(hotels, query)
         if(!result.isEmpty()){
-            respond ([list: result])
+            respond ([list: result, countResult: result.size()])
         }
-        render(view: "notFound")
+        else{
+            render(view: "notFound")
+        }
     }
 
     private static List<Hotel> filter(List<Hotel> input, String query) {
@@ -20,5 +21,9 @@ class SearchController {
                 result.add(it)
         }
         return result
+    }
+
+    def toHome() {
+        redirect(controller: "home")
     }
 }

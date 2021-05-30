@@ -30,7 +30,6 @@
         <tr>
             <th>Rating</th>
             <th>Name</th>
-            <th>Country</th>
             <th>Site</th>
         </tr>
         </thead>
@@ -39,7 +38,6 @@
             <tr>
                 <td>${entry.rating}</td>
                 <td>${entry.name}</td>
-                <td>${entry.country}</td>
                 <td>${entry.site}</td>
             </tr>
         </g:each>

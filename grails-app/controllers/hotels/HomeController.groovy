@@ -4,11 +4,12 @@ class HomeController {
 
     def index() {
         List<Hotel> listResult = Hotel.findAll()
-        respond ([list: listResult])
+        def countries = Country.findAll()
+        respond ([list: listResult, countries: countries])
     }
 
-    def search(String query) {
-        redirect(controller: "search", params: [query: query])
+    def search(String query, String country) {
+        redirect(controller: "search", params: [query: query, country: country])
     }
 
     def toCountry() {

@@ -17,6 +17,11 @@
         <td>
             <form action="/home/search" method="post" style="margin: 5px 10px; width: 320px">
                 <input type="text" name="query" value="" id="query">
+                <select type="select" name="country">
+                    <g:each in="${countries}" var="country">
+                        <option>${country.name}</option>
+                    </g:each>
+                </select>
                 <input type="submit" name="Search" value="Search" id="Search">
             </form>
         </td>

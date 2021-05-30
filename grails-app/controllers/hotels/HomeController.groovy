@@ -3,11 +3,19 @@ package hotels
 class HomeController {
 
     def index() {
-        ArrayList<String> listResult = new ArrayList<>()
-        listResult.add("First")
-        listResult.add("Second")
-        listResult.add("third")
-        listResult
+        List<Hotel> listResult = Hotel.findAll()
         respond ([list: listResult])
+    }
+
+    def search(String query) {
+        redirect(controller: "search", params: [query: query])
+    }
+
+    def toCountry() {
+        redirect(controller: "country")
+    }
+
+    def toHotels() {
+        redirect(controller: "hotel")
     }
 }

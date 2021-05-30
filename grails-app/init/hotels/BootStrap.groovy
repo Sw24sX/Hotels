@@ -23,6 +23,8 @@ class BootStrap {
         hotelService.save("Riu Plaza Berlin", 5, null, germany)
 
         hotelService.save("Pestana Chelsea Bridge Hotel & Spa", 4, null, greatBritain)
+
+        hotelService.save("test", 1, null, russia)
     }
     def destroy = {
     }

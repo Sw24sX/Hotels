@@ -6,7 +6,6 @@ class Hotel {
     String name
     Integer rating
     String site
-//    Country country
     static belongsTo = [country: Country]
 
     static constraints = {

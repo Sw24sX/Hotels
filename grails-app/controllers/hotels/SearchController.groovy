@@ -4,11 +4,20 @@ class SearchController {
 
     def index() {
         def query = (params.query as String).toLowerCase()
-        def countryName = params.country as String
+        def country = Country.findByName(params.country as String)
 
-        def result = filter(Hotel.findAll(), query, countryName)
-        sort(result)
+        def c = Hotel.createCriteria()
+        def result = c.list {
+            //                .in("name", query)
+            like("name", "%" + query + "%")
+            eq("country", country)
+                .order("rating", "desc")
+                .order("name")
+        }
 
+
+//        def result = filter(Hotel.findAll(), query, countryName)
+//        sort(result)
         if(!result.isEmpty()){
             respond ([list: result, countResult: result.size()])
         }

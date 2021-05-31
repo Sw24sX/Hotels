@@ -15,6 +15,12 @@
 <body>
     <table>
         <td>
+            <g:link controller="home" action="toHotels"> Справочник отелей </g:link>
+            <br>
+            <g:link controller="home" action="toCountry"> Справочник стран </g:link>
+        </td>
+
+        <td>
             <form action="/home/search" method="post" style="margin: 5px 10px; width: 320px">
                 <input type="text" name="query" value="" id="query">
                 <select type="select" name="country">
@@ -23,18 +29,6 @@
                     </g:each>
                 </select>
                 <input type="submit" name="Search" value="Найти" id="Search" style="margin: 5px 50px">
-            </form>
-        </td>
-
-        <td>
-            <form action="/home/toCountry" method="get" style="margin: 5px 10px; width: 320px; align:left">
-                <input type="submit" name="Countries" value="Справочник стран" id="Country">
-            </form>
-        </td>
-
-        <td>
-            <form action="/home/toHotels" method="get" style="margin: 5px 10px; width: 320px; align:left">
-                <input type="submit" name="Hotels" value="Справочник отелей" id="Hotel">
             </form>
         </td>
     </table>
